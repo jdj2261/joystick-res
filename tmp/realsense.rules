@@ -1,0 +1,2 @@
+SUBSYSTEMS=="usb", KERNEL=="video[0-9]*", ATTRS{idVendor}=="8086", ATTRS{idProduct}=="0b07", MODE="0666", SYMLINK+="realsense"
+
