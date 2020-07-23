@@ -1,3 +1,2 @@
-mkdir bootup && cd bootup
-ln -s ~/joystick-serial .
+mkdir bootup && cd bootup && ln -sfn ~/joystick-serial .
 
