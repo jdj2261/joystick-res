@@ -84,7 +84,7 @@ $ cd joystick-res && ./bootup.sh
 
 ~~~
 $ cd ~
-$ cd joystcik-res && sudo ./setting.sh
+$ cd joystcik-res && ./setting.sh
 $ cd /opt && ll joystick 
 $ reboot
 ~~~
