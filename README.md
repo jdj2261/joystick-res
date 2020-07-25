@@ -1,40 +1,51 @@
-# 라즈베리파이 셋팅
+# Raspberry Pi 3 Settings
 
+TRIGGER ELITE joystick serial data transmission using Raspberry Pi 3
 
+By DJ Jin
 
-## 1. wifi 연결
+- Reference materials(address)
+  - Raspberry Pi OS install  ➡ https://www.raspberrypi.org/downloads/raspberry-pi-os/
+  - Wifi connection ➡ https://www.withover.com/2018/08/wifi.html
+  - Hangul Install ➡ https://sm987.blogspot.com/2018/12/fcitx-im-config.html, https://alwt.tistory.com/78
+  - Joystick ➡ https://github.com/jdj2261/joystick-serial.git
+  - Serial ➡ [https://luciferd.tistory.com/entry/Raspberry-Uart-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95](https://luciferd.tistory.com/entry/Raspberry-Uart-사용방법)
+  - Auto reboot ➡ https://frogbam07.tistory.com/1
+  - Canceling sleep mode ➡ [https://geeksvoyage.com/raspberry%20pi/turn-off-screen-blanking/](https://geeksvoyage.com/raspberry pi/turn-off-screen-blanking/)
+
+## 1. wifi connection
 
 Raspberry Pi Configuration
 
-Localisation -> Wifi Country -> GB(Britain)로 설정
+Localisation -> Wifi Country -> GB(Britain)
 
 
 
-## 2. 한글 설치
+## 2. Hangul Install
 
 ~~~
 $ sudo apt-get install fonts-unfonts-core
 $ sudo apt-get install fcitx-hangul
 $ sudo vi /etc/default/im-config
-IF_CONFIG_DEFAULT_MODE=fcitx (auto -> fcitx로 변경)
+IF_CONFIG_DEFAULT_MODE=fcitx (auto -> fcitx change)
 $ reboot
 ~~~
 
 
 
-## 3. 지역설정 및 키보드
+## 3. Regional Settings and Keyboard
 
 Raspberry Pi Configuration
 
-Locale : Korean으로 변경 후 재부팅
+Change to Locale: **Korean** and reboot
 
-오른쪽 상단 키보드 그림 오른쪽 마우스 버튼 클릭
+Picture of the upper right keyboard Right mouse button
 
-입력방법 한글 추가
+Input method Korean added
 
 
 
-## 4. joystick 셋팅
+## 4. joystick setting
 
 ~~~
 $ sudo apt-get install git
@@ -45,37 +56,37 @@ $ cd joystick-res && ./bootup.sh
 
 
 
-## 5. Serial 활성화
+## 5. Serial Activation
 
-1. raspi-config에서 serial 활성화
+1. Enable serial in **raspi-config**
 
    ~~~
    $ sudo raspi-config
-     5 Interfacing Options 선택
-     P6 Serial 선택
-     YES 선택
+     5 Interfacing Options Choose
+     P6 Serial Choose
+     YES Choose
    ~~~
 
-2. Bluetooth 사용 중지
+2. Disable Bluetooth
 
    ~~~
    $ sudo vi /boot/config.txt
-   맨 아래 dtoverlay=pi3-disable-bt 추가
+   dtoverlay=pi3-disable-bt Bottom Add
    $ sudo systemctl disable hciuart
    ~~~
 
-3.  disable Console
+3. disable Console
 
    ~~~
    $ sudo vi /boot/cmdline.txt
-   console=serial0.115200 부분 삭제
+   console=serial0.115200 Deletion
    ~~~
 
 4. 결과 확인
 
    ~~~
    $ ll /dev/serial0
-   /dev/serial0 -> ttyAMA0 인지 확인
+   make sure /dev/serial0 -> ttyAMA0
    ~~~
 
 
@@ -84,7 +95,7 @@ $ cd joystick-res && ./bootup.sh
 
 ~~~
 $ cd ~
-$ cd joystcik-res && sudo ./setting.sh
+$ cd joystcik-res && ./setting.sh
 $ cd /opt && ll joystick 
 $ reboot
 ~~~
