@@ -6,12 +6,20 @@ By DJ Jin
 
 - Reference materials(address)
   - Raspberry Pi OS install  ➡ https://www.raspberrypi.org/downloads/raspberry-pi-os/
+  
   - Wifi connection ➡ https://www.withover.com/2018/08/wifi.html
+  
   - Hangul Install ➡ https://sm987.blogspot.com/2018/12/fcitx-im-config.html, https://alwt.tistory.com/78
+  
   - Joystick ➡ https://github.com/jdj2261/joystick-serial.git
+  
   - Serial ➡ [https://luciferd.tistory.com/entry/Raspberry-Uart-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95](https://luciferd.tistory.com/entry/Raspberry-Uart-사용방법)
+  
   - Auto reboot ➡ https://frogbam07.tistory.com/1
+  
   - Canceling sleep mode ➡ [https://geeksvoyage.com/raspberry%20pi/turn-off-screen-blanking/](https://geeksvoyage.com/raspberry pi/turn-off-screen-blanking/)
+  
+    
 
 ## 1. wifi connection
 
