@@ -1,4 +1,5 @@
-echo '\e[1m\e[92m-- START --\033[0m'
+#!/bin/bash -e
+echo -e '\e[1m\e[92m-- START --\033[0m'
 
 # --- hangul install
 func_hangul_install() {
@@ -8,7 +9,7 @@ func_hangul_install() {
 	sudo sed -i 's/XKBDLAYOUT="gb"/XKBDLAYOUT="en"/g' /etc/default/keyboard
 }
 func_hangul_install
-echo '\e[1m\e[92minstall hangul-pkg\033[0m'
+echo -e '\e[1m\e[92minstall hangul-pkg\033[0m'
 # --- 
 
 # --- setup serial
@@ -19,7 +20,7 @@ func_serial_set() {
 	sudo sed -i 's/console=serial0,115200//g' /boot/cmdline.txt
 }
 func_serial_set
-echo '\e[1m\e[92mfinished serial setup\033[0m'
+echo -e '\e[1m\e[92mfinished serial setup\033[0m'
 # --- 
 
 func_joystick_set() {
@@ -48,7 +49,7 @@ func_joystick_set() {
 	echo "alias ll='ls -al'" >> ~/.bashrc
 }
 func_joystick_set
-echo '\e[1m\e[92mfinished joystick setup\033[0m'
+echo -e '\e[1m\e[92mfinished joystick setup\033[0m'
 
 source ~/.bashrc
 # --- 
