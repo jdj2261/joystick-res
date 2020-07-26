@@ -45,7 +45,7 @@ func_joystick_set() {
 		echo "make bootup file & set soft link"
 	fi
 
-	cd /opt && ln -s /home/pi/joystick-res joystick
+	cd /opt && sudo ln -s /home/pi/joystick-res joystick
 	echo lxterminal -e /opt/joystick/joystick.sh | sudo tee -a /etc/xdg/lxsession/LXDE-pi/autostart
 	echo "## My alias ##" >> ~/.bashrc 
 	echo "alias vbash='vi ~/.bashrc'" >> ~/.bashrc
