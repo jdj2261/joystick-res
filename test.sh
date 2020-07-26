@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 echo -e '\e[1m\e[92m-- START --\033[0m'
 
 # --- hangul install
