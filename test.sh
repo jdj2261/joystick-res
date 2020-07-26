@@ -14,8 +14,8 @@ echo -e '\e[1m\e[92minstall hangul-pkg\033[0m'
 
 # --- setup serial
 func_serial_set() {
-	sudo echo "enable_uart=1" >> /boot/config.txt
-	sudo echo "dtoverlay=pi3-disable-bt" >> /boot/config.txt
+	echo enable_uart=1 | sudo tee -a /boot/config.txt
+	echo dtoverlay=pi3-disable-bt | sudo tee -a /boot/config.txt
 	sudo systemctl disable hciuart
 	sudo sed -i 's/console=serial0,115200//g' /boot/cmdline.txt
 }
@@ -42,7 +42,7 @@ func_joystick_set() {
 	fi
 
 	cd /opt && ln -s /home/pi/joystick-res joystick
-	echo "lxterminal -e /opt/joystick/joystick.sh" >> /etc/xdg/lxsession/LXDE-pi/autostart
+	echo lxterminal -e /opt/joystick/joystick.sh | sudo tee -a /etc/xdg/lxsession/LXDE-pi/autostart
 	echo "## My alias ##" >> ~/.bashrc 
 	echo "alias vbash='vi ~/.bashrc'" >> ~/.bashrc
 	echo "alias sbash='source ~/.bashrc'" >> ~/.bashrc
