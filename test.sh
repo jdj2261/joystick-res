@@ -46,10 +46,11 @@ func_joystick_set() {
 	echo "alias vbash='vi ~/.bashrc'" >> ~/.bashrc
 	echo "alias sbash='source ~/.bashrc'" >> ~/.bashrc
 	echo "alias ll='ls -al'" >> ~/.bashrc
-	source ~/.bashrc
 }
 func_joystick_set
 echo '\e[1m\e[92mfinished joystick setup\033[0m'
+
+source ~/.bashrc
 # --- 
 
 
