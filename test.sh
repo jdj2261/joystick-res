@@ -52,7 +52,7 @@ func_joystick_set
 echo -e '\e[1m\e[92mfinished joystick setup\033[0m'
 # --- 
 
-sudo reboot
+#sudo reboot
 
 
 
