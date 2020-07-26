@@ -3,8 +3,8 @@ echo -e '\e[1m\e[92m-- START --\033[0m'
 
 # --- hangul install
 func_hangul_install() {
-	sudo apt-get install fcitx-hangul
-	sudo apt-get install fonts-unfonts-core
+	sudo apt-get -y install fcitx-hangul
+	sudo apt-get -y install fonts-unfonts-core
 	sudo sed -i 's/IM_CONFIG_DEFAULT_MODE=auto/IF_CONFIG_DEFAULT_MODE=fcitx/g' /etc/default/im-config
 	sudo sed -i 's/XKBDLAYOUT="gb"/XKBDLAYOUT="en"/g' /etc/default/keyboard
 }
@@ -24,8 +24,8 @@ echo -e '\e[1m\e[92mfinished serial setup\033[0m'
 # --- 
 
 func_joystick_set() {
-	sudo apt-get install vim
-	sudo apt-get install git
+	sudo apt-get -y install vim
+	sudo apt-get -y install git
 	cd ~
 	git clone https://github.com/jdj2261/joystick-serial.git
 	git clone https://github.com/jdj2261/joystick-res.git
@@ -47,11 +47,12 @@ func_joystick_set() {
 	echo "alias vbash='vi ~/.bashrc'" >> ~/.bashrc
 	echo "alias sbash='source ~/.bashrc'" >> ~/.bashrc
 	echo "alias ll='ls -al'" >> ~/.bashrc
+	source ~/.bashrc
 }
 func_joystick_set
 echo -e '\e[1m\e[92mfinished joystick setup\033[0m'
 
-source ~/.bashrc
+sudo reboot
 # --- 
 
 
