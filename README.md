@@ -104,3 +104,9 @@ $ reboot
 
 
 
+## 7. Auto Install Script
+
+~~~
+$ ./install.sh
+~~~
+
