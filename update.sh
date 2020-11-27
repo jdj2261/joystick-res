@@ -21,7 +21,7 @@ func_install_vscode(){
     echo -e "${GREEN}-- Install VScode -- ${NC}"
     wget https://packagecloud.io/headmelted/codebuilds/gpgkey -O - | sudo apt-key add -
     . <( wget -O - https://code.headmelted.com/installers/apt.sh )
-    apt-get install code-oss=1.29.0-1539702286
+    sudo apt-get -y install code-oss=1.29.0-1539702286
     echo -e "${Light_BLUE}-- Finished VScode install-- ${NC}"
 }
 func_install_vscode
