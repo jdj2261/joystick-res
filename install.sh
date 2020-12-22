@@ -105,8 +105,3 @@ echo -e '\e[1m\e[92mReboot...\033[0m'
 sleep 3
 sudo reboot
 # --- 
-
-
-
-
-

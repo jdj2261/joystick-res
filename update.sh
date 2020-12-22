@@ -14,8 +14,20 @@ NC='\033[0m' # No Color
 func_screensaver() {
     echo -e "${GREEN}-- Add consoleblank=0 in /boot/cmdline.txt --${NC}"
     echo consoleblank=0 | sudo tee -a /boot/cmdline.txt
+	sudo sed -i ':a;N;$!ba;s/\n/ /g' /boot/cmdline.txt 
+	sudo apt-get install -y xscreensaver
+    echo -e "${Light_BLUE}-- Finished ScreenSaver install-- ${NC}"
 }
 func_screensaver
+
+# --- enable ssh
+func_enable_ssh() {
+    echo -e "${GREEN}-- Enable SSH --${NC}"
+    sudo systemctl enable ssh
+	sudo systemctl start ssh
+    echo -e "${Light_BLUE}-- Completed ssh settings-- ${NC}"
+}
+func_enable_ssh
 
 func_install_vscode(){
     echo -e "${GREEN}-- Install VScode -- ${NC}"
