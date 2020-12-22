@@ -15,6 +15,7 @@ echo -e '\e[1m\e[92m-- START --\033[0m'
 
 # --- hangul install
 func_hangul_install() {
+	sudo apt-get update
 	echo -e '\e[1m\e[92mfcitx-hangul install\033[0m'
 	sudo apt-get -y install fcitx-hangul
 	echo -e '\e[1m\e[92mfonts-unfonts-core install\033[0m'
@@ -43,7 +44,7 @@ func_joystick_set() {
 	echo -e '\e[1m\e[92mgit install\033[0m'
 	sudo apt-get -y install git
 	cd ~
-	echo -e '\e[1m\e[92joystick git clone\033[0m'
+	echo -e '\e[1m\e[92mjoystick git clone\033[0m'
 	git clone https://github.com/jdj2261/joystick-serial.git
 	git clone https://github.com/jdj2261/joystick-res.git
 	cd ~/joystick-res
@@ -79,10 +80,10 @@ func_screensaver
 
 func_install_vscode(){
     echo -e "${GREEN}-- Install VScode -- ${NC}"
-    wget https://packagecloud.io/headmelted/codebuilds/gpgkey -O - | sudo apt-key add -
-    . <( wget -O - https://code.headmelted.com/installers/apt.sh )
-	sudo apt-get update
-    sudo apt-get -y install code-oss=1.29.0-1539702286
+    sudo wget -qO - https://packagecloud.io/headmelted/codebuilds/gpgkey | sudo apt-key add -;
+    echo deb https://packagecloud.io/headmelted/codebuilds/raspbian/ jessie main | sudo tee -a /etc/apt/sources.list
+    sudo apt-get update
+    sudo apt-get -y install code-oss
     echo -e "${Light_BLUE}-- Finished VScode install-- ${NC}"
 }
 func_install_vscode

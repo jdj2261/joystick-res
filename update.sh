@@ -19,10 +19,10 @@ func_screensaver
 
 func_install_vscode(){
     echo -e "${GREEN}-- Install VScode -- ${NC}"
-    wget https://packagecloud.io/headmelted/codebuilds/gpgkey -O - | sudo apt-key add -
-    . <( wget -O - https://code.headmelted.com/installers/apt.sh )
+    sudo wget -qO - https://packagecloud.io/headmelted/codebuilds/gpgkey | sudo apt-key add -;
+    echo deb https://packagecloud.io/headmelted/codebuilds/raspbian/ jessie main | sudo tee -a /etc/apt/sources.list
     sudo apt-get update
-    sudo apt-get -y install code-oss=1.29.0-1539702286
+    sudo apt-get -y install code-oss
     echo -e "${Light_BLUE}-- Finished VScode install-- ${NC}"
 }
 func_install_vscode
