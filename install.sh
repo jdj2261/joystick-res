@@ -76,6 +76,7 @@ func_screensaver() {
     echo -e "${GREEN}-- Add consoleblank=0 in /boot/cmdline.txt --${NC}"
     echo consoleblank=0 | sudo tee -a /boot/cmdline.txt
 	sudo sed -i ':a;N;$!ba;s/\n/ /g' /boot/cmdline.txt 
+	sudo apt-get install -y xscreensaver
 }
 func_screensaver
 
