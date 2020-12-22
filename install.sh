@@ -75,8 +75,17 @@ echo -e '\e[1m\e[92mfinished joystick setup\033[0m'
 func_screensaver() {
     echo -e "${GREEN}-- Add consoleblank=0 in /boot/cmdline.txt --${NC}"
     echo consoleblank=0 | sudo tee -a /boot/cmdline.txt
+	sudo sed -i ':a;N;$!ba;s/\n/ /g' /boot/cmdline.txt 
 }
 func_screensaver
+
+# --- enable ssh
+func_enable_ssh() {
+    echo -e "${GREEN}-- Enable SSH --${NC}"
+    sudo systemctl enable ssh
+	sudo systemctl start ssh
+}
+func_enable_ssh
 
 func_install_vscode(){
     echo -e "${GREEN}-- Install VScode -- ${NC}"
