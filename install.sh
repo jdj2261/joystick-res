@@ -1,5 +1,17 @@
 #!/bin/bash
+
+#### Colors ####
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+Light_BLUE='\033[1;34m'
+Light_Cyan='\033[1;35m'
+BLUE='\033[1;36m'
+NC='\033[0m' # No Color
+##################
+
 echo -e '\e[1m\e[92m-- START --\033[0m'
+
 
 # --- hangul install
 func_hangul_install() {
@@ -51,10 +63,32 @@ func_joystick_set() {
 	echo "alias vbash='vi ~/.bashrc'" >> ~/.bashrc
 	echo "alias sbash='source ~/.bashrc'" >> ~/.bashrc
 	echo "alias ll='ls -al'" >> ~/.bashrc
+	echo "alias joystick=/opt/joystick/joystick.sh" >> ~/.bashrc
 	source ~/.bashrc
 }
 func_joystick_set
 echo -e '\e[1m\e[92mfinished joystick setup\033[0m'
+
+
+# --- add screensaver
+func_screensaver() {
+    echo -e "${GREEN}-- Add consoleblank=0 in /boot/cmdline.txt --${NC}"
+    echo consoleblank=0 | sudo tee -a /boot/cmdline.txt
+}
+func_screensaver
+
+func_install_vscode(){
+    echo -e "${GREEN}-- Install VScode -- ${NC}"
+    wget https://packagecloud.io/headmelted/codebuilds/gpgkey -O - | sudo apt-key add -
+    . <( wget -O - https://code.headmelted.com/installers/apt.sh )
+	sudo apt-get update
+    sudo apt-get -y install code-oss=1.29.0-1539702286
+    echo -e "${Light_BLUE}-- Finished VScode install-- ${NC}"
+}
+func_install_vscode
+
+sleep 1
+echo -e "${BLUE}-- Finished Update-- ${NC}"
 
 echo -e '\e[1m\e[92mReboot...\033[0m'
 sleep 3
