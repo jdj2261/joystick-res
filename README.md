@@ -53,7 +53,6 @@ Input method Korean added
 $ sudo apt-get install git
 $ git clone https://github.com/jdj2261/joystick-serial.git
 $ git clone https://github.com/jdj2261/joystick-res.git
-$ cd joystick-res && ./bootup.sh
 ~~~
 
 
@@ -97,11 +96,8 @@ $ cd joystick-res && ./bootup.sh
 
 ~~~
 $ cd ~
-$ cd joystcik-res && sudo ./setting.sh
-$ cd /opt && ll joystick 
-$ reboot
+$ /opt/joystick/joystick.sh  or $ joystick
 ~~~
-
 
 
 ## 7. Auto Install Script
