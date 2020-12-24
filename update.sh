@@ -19,6 +19,7 @@ func_screensaver() {
     echo -e "${Light_BLUE}-- Finished ScreenSaver install-- ${NC}"
 }
 func_screensaver
+sleep 1
 
 # --- enable ssh
 func_enable_ssh() {
@@ -28,7 +29,18 @@ func_enable_ssh() {
     echo -e "${Light_BLUE}-- Completed ssh settings-- ${NC}"
 }
 func_enable_ssh
+sleep 1
 
+# --- alias joystick
+func_alias_joystick() {
+    echo -e "${GREEN}-- Alias joistick --${NC}"
+    echo "alias joystick=/opt/joystick/joystick.sh" >> ~/.bashrc
+    echo -e "${Light_BLUE}-- Completed alias settings-- ${NC}"
+}
+func_alias_joystick
+sleep 1
+
+# --- install vscode
 func_install_vscode(){
     echo -e "${GREEN}-- Install VScode -- ${NC}"
     sudo wget -qO - https://packagecloud.io/headmelted/codebuilds/gpgkey | sudo apt-key add -;
@@ -38,6 +50,16 @@ func_install_vscode(){
     echo -e "${Light_BLUE}-- Finished VScode install-- ${NC}"
 }
 func_install_vscode
-
 sleep 1
+
+# --- git pull
+func_git_pull(){
+    echo -e "${GREEN}-- Git pull -- ${NC}"
+    cd ~/joystick-serial && git pull
+    cd ~/joystick-res && git pull
+    echo -e "${Light_BLUE}-- Finished git pull --${NC}"
+}
+func_git_pull
+sleep 1
+
 echo -e "${BLUE}-- Finished Update-- ${NC}"
