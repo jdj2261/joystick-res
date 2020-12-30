@@ -52,6 +52,36 @@ func_install_vscode(){
 func_install_vscode
 sleep 1
 
+#--- install uhubctl lib 
+func_install_uhubctl(){
+    echo -e "${GREEN}-- Install uhubctrl -- ${NC}"
+    sudo apt-get install libusb-1.0-0-dev
+    cd ~/
+    git clone https://github.com/mvp/uhubctl
+    cd uhubctl
+    make
+    sudo make install
+    echo -e "${Light_BLUE}-- Finished uhubctrl install -- ${NC}"
+}
+func_install_uhubctl
+sleep 1
+
+#--- Enable raspberry pi USB port on/off
+func_usb_on_off(){
+    echo -e "${GREEN}-- USB port on/off -- ${NC}"
+    #sudo sed -i '/_IP=/i sudo uhubctl -l 2 -a 0' /etc/rc.local
+    #sudo sed -i '/_IP=/i sleep 1' /etc/rc.local
+    sudo sed -i '/_IP=/i sudo uhubctl -l 2 -a 2\n' /etc/rc.local
+    # sudo sed -i '$ i\uhubctl -l 2 -a 0' /etc/rc.local
+    # sudo sed -i '$ i\sleep 1' /etc/rc.local
+    # sudo sed -i '$ i\sudo uhubctl -l 2 -a 1' /etc/rc.local
+    echo -e "${Light_BLUE}-- Finished USB port on/off setting-- ${NC}"
+    sleep 1
+    sudo cat /etc/rc.local
+}
+func_usb_on_off
+sleep 1
+
 # --- git pull
 func_git_pull(){
     echo -e "${GREEN}-- Git pull -- ${NC}"
@@ -61,5 +91,7 @@ func_git_pull(){
 }
 func_git_pull
 sleep 1
+
+
 
 echo -e "${BLUE}-- Finished Update-- ${NC}"
