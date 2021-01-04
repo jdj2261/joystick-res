@@ -55,7 +55,7 @@ sleep 1
 #--- install uhubctl lib 
 func_install_uhubctl(){
     echo -e "${GREEN}-- Install uhubctrl -- ${NC}"
-    sudo apt-get install libusb-1.0-0-dev
+    sudo apt-get -y install libusb-1.0-0-dev
     cd ~/
     git clone https://github.com/mvp/uhubctl
     cd uhubctl
