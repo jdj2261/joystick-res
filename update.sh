@@ -35,6 +35,7 @@ sleep 1
 func_alias_joystick() {
     echo -e "${GREEN}-- Alias joistick --${NC}"
     echo "alias joystick=/opt/joystick/joystick.sh" >> ~/.bashrc
+    source ~/.bashrc
     echo -e "${Light_BLUE}-- Completed alias settings-- ${NC}"
 }
 func_alias_joystick
@@ -69,7 +70,7 @@ sleep 1
 #--- Enable raspberry pi USB port on/off
 func_usb_on_off(){
     echo -e "${GREEN}-- USB port on/off -- ${NC}"
-    #sudo sed -i '/_IP=/i sudo uhubctl -l 2 -a 0' /etc/rc.local
+    sudo sed -i '/_IP=/i sudo uhubctl -l 1-1 -p 2 -a 0' /etc/rc.local
     #sudo sed -i '/_IP=/i sleep 1' /etc/rc.local
     sudo sed -i '/_IP=/i sudo uhubctl -l 2 -a 2\n' /etc/rc.local
     # sudo sed -i '$ i\uhubctl -l 2 -a 0' /etc/rc.local
