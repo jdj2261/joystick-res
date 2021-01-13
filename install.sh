@@ -134,8 +134,9 @@ sleep 1
 #--- Enable raspberry pi USB port on/off
 func_usb_on_off(){
     echo -e "${GREEN}-- USB port on/off -- ${NC}"
-    sudo sed -i '/_IP=/i sudo uhubctl -l 1-1 -p 2 -a 0' /etc/rc.local
-    # sudo sed -i '/_IP=/i sleep 1' /etc/rc.local
+    sudo sed -i '/_IP=/i sudo uhubctl -l 1-1 -a 0' /etc/rc.local
+    sudo sed -i '/_IP=/i sleep 1' /etc/rc.local
+    sudo sed -i '/_IP=/i sudo uhubctl -l 1-1 -a 2' /etc/rc.local
     # sudo sed -i '/_IP=/i sudo uhubctl -l 2 -a 2\n' /etc/rc.local
 
     echo -e "${Light_BLUE}-- Finished USB port on/off setting-- ${NC}"
