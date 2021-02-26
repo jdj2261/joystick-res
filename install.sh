@@ -72,7 +72,7 @@ echo -e "${Light_BLUE}Finished joystick setup${NC}"
 sleep 1
 
 # --- set alias
-func_alias_set {
+func_alias_set() {
 	echo -e "${GREEN}Set Alias${NC}"
 	echo "## My alias ##" >> ~/.bashrc 
 	echo "alias vbash='vi ~/.bashrc'" >> ~/.bashrc
