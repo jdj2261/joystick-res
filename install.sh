@@ -15,11 +15,11 @@ sleep 1
 
 # --- hangul install
 func_hangul_install() {
-	sudo apt-get update
+	sudo apt update
 	echo -e "${GREEN}Install fcitx-hangul${NC}"
-	sudo apt-get -y install fcitx-hangul
+	sudo apt -y install fcitx-hangul
 	echo -e "${GREEN}Install fonts-unfonts-core${NC}"
-	sudo apt-get -y install fonts-unfonts-core
+	sudo apt -y install fonts-unfonts-core
 	sudo sed -i 's/IM_CONFIG_DEFAULT_MODE=auto/IF_CONFIG_DEFAULT_MODE=fcitx/g' /etc/default/im-config
 	sudo sed -i 's/XKBLAYOUT="gb"/XKBLAYOUT="en"/g' /etc/default/keyboard
 }
@@ -44,9 +44,13 @@ sleep 1
 # --- set joystick-serial, joystick-res
 func_joystick_set() {
 	echo -e "${GREEN}Install vim${NC}"
-	sudo apt-get -y install vim
+	sudo apt -y install vim
 	echo -e "${GREEN}Install git${NC}"
-	sudo apt-get -y install git
+	sudo apt -y install git
+	echo -e "${GREEN}Install pip${NC}"
+	sudo apt -y install python-pip
+	echo -e "${GREEN}Install gitpython package${NC}"
+	pip install gitpython
 	cd ~
 	echo -e "${GREEN}Clone joystick-serial.git & joistck-res.git${NC}"
 	git clone https://github.com/jdj2261/joystick-serial.git
@@ -90,7 +94,7 @@ func_screensaver() {
     echo -e "${GREEN}-- Add consoleblank=0 in /boot/cmdline.txt --${NC}"
     echo consoleblank=0 | sudo tee -a /boot/cmdline.txt
 	sudo sed -i ':a;N;$!ba;s/\n/ /g' /boot/cmdline.txt 
-	sudo apt-get install -y xscreensaver
+	sudo apt install -y xscreensaver
 }
 func_screensaver
 echo -e "${Light_BLUE}Finished screensaver${NC}"
@@ -110,8 +114,8 @@ func_install_vscode(){
     echo -e "${GREEN}-- Install VScode -- ${NC}"
     sudo wget -qO - https://packagecloud.io/headmelted/codebuilds/gpgkey | sudo apt-key add -;
     echo deb https://packagecloud.io/headmelted/codebuilds/raspbian/ jessie main | sudo tee -a /etc/apt/sources.list
-    sudo apt-get update
-    sudo apt-get -y install code-oss
+    sudo apt update
+    sudo apt -y install code-oss
     echo -e "${Light_BLUE}-- Finished VScode install-- ${NC}"
 }
 func_install_vscode
@@ -120,7 +124,7 @@ sleep 1
 #--- install uhubctl lib 
 func_install_uhubctl(){
     echo -e "${GREEN}-- Install uhubctrl -- ${NC}"
-    sudo apt-get install -y libusb-1.0-0-dev
+    sudo apt install -y libusb-1.0-0-dev
     cd ~/
     git clone https://github.com/mvp/uhubctl
     cd uhubctl
