@@ -7,7 +7,7 @@ By DJ Jin
 - Reference materials(address)
   - Raspberry Pi OS install  ➡ [참고](https://www.raspberrypi.org/downloads/raspberry-pi-os/)
   - Wifi connection ➡ [참고](https://www.withover.com/2018/08/wifi.html)
-  - Hangul Install ➡ [참고](https://sm987.blogspot.com/2018/12/fcitx-im-config.html, https://alwt.tistory.com/78)
+  - Hangul Install ➡ [참고](https://sm987.blogspot.com/2018/12/fcitx-im-config.html), [참고](https://alwt.tistory.com/78)
   - Joystick ➡ [참고](https://github.com/jdj2261/joystick-serial.git)
   - Serial ➡ [참고](https://luciferd.tistory.com/entry/Raspberry-Uart-사용방법)
   - Auto reboot ➡ [참고](https://frogbam07.tistory.com/1)
