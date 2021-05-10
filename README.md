@@ -100,6 +100,7 @@ $ /opt/joystick/joystick.sh  or $ joystick
 ~~~
 
 
+
 ## 7. Auto Install Script
 
 ~~~
