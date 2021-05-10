@@ -48,9 +48,9 @@ func_joystick_set() {
 	echo -e "${GREEN}Install git${NC}"
 	sudo apt -y install git
 	echo -e "${GREEN}Install pip${NC}"
-	sudo apt -y install python-pip
+	sudo apt -y install python-pip3
 	echo -e "${GREEN}Install gitpython package${NC}"
-	pip install gitpython
+	pip3 install gitpython
 	cd ~
 	echo -e "${GREEN}Clone joystick-serial.git & joistck-res.git${NC}"
 	git clone https://github.com/jdj2261/joystick-serial.git
