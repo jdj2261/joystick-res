@@ -47,8 +47,6 @@ func_joystick_set() {
 	sudo apt -y install vim
 	echo -e "${GREEN}Install git${NC}"
 	sudo apt -y install git
-	echo -e "${GREEN}Install pip3${NC}"
-	sudo apt -y install python3-pip
 	echo -e "${GREEN}Install gitpython package${NC}"
 	pip3 install gitpython
 	cd ~
@@ -109,7 +107,7 @@ func_enable_ssh() {
 func_enable_ssh
 sleep 1
 
-# --- install vscode (code-oss)
+# --- install vscode (code)
 func_install_vscode(){
     echo -e "${GREEN}-- Install VScode -- ${NC}"
     sudo apt update

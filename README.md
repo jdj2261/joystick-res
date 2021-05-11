@@ -2,6 +2,8 @@
 
 This is a package related to Raspberry Pi 3 setting method and joystick package installation manual.
 
+The joystick package is [here](https://github.com/jdj2261/joystick-serial.git), so please refer to it.
+
 ### Reference materials(address)
 
 - Raspberry Pi OS install  ➡ [reference](https://www.raspberrypi.org/downloads/raspberry-pi-os/)
@@ -16,7 +18,9 @@ This is a package related to Raspberry Pi 3 setting method and joystick package 
 
 #### Run auto Install script
 
-**Created a shell script that automatically does all the installations, including the below.**
+Created a shell script that automatically does all the installations, including the below.
+
+See [install.sh](https://github.com/jdj2261/joystick-res/blob/master/install.sh) file.
 
 ~~~
 $ git clone https://github.com/jdj2261/joystick-res.git
