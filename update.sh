@@ -92,6 +92,4 @@ func_git_pull(){
 func_git_pull
 sleep 1
 
-
-
 echo -e "${BLUE}-- Finished Update-- ${NC}"
